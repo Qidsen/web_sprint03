@@ -1,11 +1,12 @@
 class Human {
-    constructor(firstName, lastName, gender, age, calories, sleep) {
+    constructor(firstName, lastName, gender, age, calories, sleep, rank) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
         this.calories = calories;
-        this.sleep = sleep;
+		this.sleep = sleep;
+		this.rank = rank;
     }
 
     feed() {
@@ -37,12 +38,13 @@ class Human {
 }
 
 const person = new Human(
-    "Peter",
-    "Parker",
+    "Sung",
+    "Jin-Woo",
     "male",
-    16,
+    18,
     0,
-    true
+	true,
+	"E"
 );
 
 document.getElementById("firstname").innerHTML = "First name: " + person.firstName;
@@ -50,54 +52,59 @@ document.getElementById("lastname").innerHTML = "Last name: " + person.lastName;
 document.getElementById("age").innerHTML = "Age: " + person.age;
 document.getElementById("gender").innerHTML = "Gender: " + person.gender;
 document.getElementById("calories").innerHTML = "Calories: " + person.calories;
+document.getElementById("rank").innerHTML = "Rank: " + person.rank;
 
 class Superhero extends Human {
-    constructor(alias, web, age) {
+    constructor(alias, mana, age, gender, rang) {
         super(age, calories, gender);
         this.alias = alias;
-        this.web = web;
+		this.mana = mana;
+		this.rang = rang;
     }
 
-	fly() {
-	    alert("whoa! I'm flying!!");
-	    setTimeout(() => {document.getElementById('image').src = 'assets/images/flying.jpg';}, 100);
-	    setTimeout(() => {document.getElementById('image').src = 'assets/images/Spider-Man.jpg';}, 5000);
+	shadowTrade() {
+	    alert("I changed places with my shadow!");
+	    setTimeout(() => {document.getElementById('image').src = 'assets/images/trade.jpg';}, 100);
+	    setTimeout(() => {document.getElementById('image').src = 'assets/images/awakened.png';}, 5000);
 	}
 
-	shooting() {
-	    document.getElementById("web").innerHTML = "Web: " + hero.web;
-    	this.web = hero.web;
-	    if (this.web == 0) {
-	    	hero.web = 0;
-	    	document.getElementById("web").innerHTML = "Web: " + hero.web;
-	        alert("No Ammo");
-	    } else if (this.web <= 100) {
-	        alert("Pew Pew Pew");
-	        setTimeout(() => {document.getElementById('image').src = 'assets/images/shooting-web.jpg';}, 100);
-	        setTimeout(() => {document.getElementById('image').src = 'assets/images/Spider-Man.jpg';}, 10000);
-	        return this.web -= 20;
+	summon() {
+	    document.getElementById("mana").innerHTML = "Mana: " + hero.mana;
+    	this.mana = hero.mana;
+	    if (this.mana == 0) {
+	    	hero.mana = 0;
+	    	document.getElementById("mana").innerHTML = "Mana: " + hero.mana;
+	        alert("No mana!");
+	    } else if (this.mana <= 100) {
+	        alert("Army summmoned!");
+	        setTimeout(() => {document.getElementById('image').src = 'assets/images/summon.jpg';}, 100);
+	        setTimeout(() => {document.getElementById('image').src = 'assets/images/awakened.png';}, 10000);
+	        return hero.mana -= 1;
 	    }
 	}
 
-	fightWithEvil() {
-	    let x = alert("Fight with Evil");
+	fightWithOverlord() {
+	    let x = alert("Fight with Boss!");
 	    x *= 1000;
-	    alert("Khhhh-chh... Bang-g-g-g... Evil is defeated");
-	    setTimeout(() => {document.getElementById('image').src = 'assets/images/fightning.jpg';}, 100);
-	    setTimeout(() => {document.getElementById('image').src = 'assets/images/Spider-Man.jpg';}, x);
+	    alert("Khhhh-chh... Bang-g-g-g... Boss was defeated!");
+	    setTimeout(() => {document.getElementById('image').src = 'assets/images/fighting.jpg';}, 100);
+	    setTimeout(() => {document.getElementById('image').src = 'assets/images/awakened.png';}, x);
 	}
 }
 
 const hero = new Superhero(
-    "Spider-Man",
+    "Awakened Sung Jin-Woo",
     100,
     person.age,
-    person.gender,
+	person.gender,
+	"S"
 );
 
 document.getElementById("alias").innerHTML = "Name: " + hero.alias;
 document.getElementById("ages").innerHTML = "Age: " + person.age;
 document.getElementById("genders").innerHTML = "Gender: " + person.gender;
+document.getElementById("mana").innerHTML = "Mana: " + hero.mana;
+document.getElementById("rang").innerHTML = "Rank: " + hero.rang;
 
 function TurnIntoSuperhero() {
     if (person.calories < 500 && person.sleep != false)
@@ -107,7 +114,7 @@ function TurnIntoSuperhero() {
     else if (person.calories < 500 && person.sleep == false)
         document.getElementById("message-here").innerHTML = "I'm hungry";
     else {
-        alert("I'm Spider-man");
+        alert("I'm Awakened!");
         setTimeout(() => {document.getElementById('stylesheet').href = 'css/superhero.css';}, 1000);
     }
 }
