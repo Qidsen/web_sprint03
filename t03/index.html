@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Upgrade Human</title>
+    <meta name="description"content="t03. Upgrade Human">
+    <link id="stylesheet" rel="stylesheet" href="css/human.css">
+</head>
+
+<body>
+    <h1>Upgrade Human</h1>
+    <div class="Human">
+        <img src="assets/images/peter.jpg" alt="Peter Parker">
+        <div class="buttons">
+            <button id="sleep" onclick="return person.sleepFor()">Sleep</button>
+            <button id="feed" onclick="return person.feed()">Feed</button>
+            <button id="tsp" onclick="return TurnIntoSuperhero('style2.css',0)">Turn into superhero</button>
+        </div>
+        <div class="properties_container">
+            <span class="prop">Properties: </span>
+            <span id="firstname">First name: </span>
+            <span id="lastname">Last name: </span>
+            <span id="age">Age: </span>
+            <span id="gender">Gender: </span>
+            <span id="calories">Calories: </span>
+            <div class="message" id="message-here"><span>...</span></div>
+        </div>
+    </div>
+    <div class="superhero">
+        <img src="assets/images/Spider-Man.jpg" alt="Spider Man" id="image">
+        <div class="buttons">
+            <button id="fly" onclick="return hero.fly()">Fly</button>
+            <button id="shooting" onclick="return hero.shooting()">Shooting Web</button>
+            <button id="fightwithevil" onclick="return hero.fightWithEvil()">Fight With Evil</button>
+        </div>
+        <div class="properties_container">
+            <span class="prop">Properties: </span>
+            <span id="alias">Name: </span>
+            <span id="ages">Age: </span>
+            <span id="genders">Gender: </span>
+            <span id="web">Web: </span>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
