@@ -4,7 +4,7 @@ function* generator(x = 5) {
     let alert;
     for (let i = 0; i < x; i++) {
         alert = prompt("Previous result: " + y + ". Enter a new number:");
-        if (Number(alert1) > 10000) {
+        if (Number(alert) > 10000) {
             y = 1;
         } else if (Number.isNaN(Number(alert))) {
             console.error("Invalid number!");
@@ -15,4 +15,4 @@ function* generator(x = 5) {
     alert("Result is: " + y);
 }
 
-for (let generator1 of gen()) {}
+for (let generator1 of generator()) {}

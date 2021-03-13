@@ -15,7 +15,7 @@ export default class Linkedlist {
                     return { done: false, value: this.structure[this.current++] }
             }
         }
-    }
+    };
 
     add(value) {
         let x = 0
@@ -35,7 +35,7 @@ export default class Linkedlist {
         for (const item of this) {
             if (item == value && find == false) {
                 find = true
-                continue
+                continue;
             }
             obj[x] = item
             x++
@@ -47,7 +47,7 @@ export default class Linkedlist {
     contains(value) {
         for (const item of this) {
             if (item == value)
-                return true;
+                return true
         }
         return false
     }
@@ -60,7 +60,7 @@ export default class Linkedlist {
             x++
         return x
     }
-    
+
     log() {
         let arr = Array.from(this)
         console.log(arr.join(", "))

@@ -15,7 +15,7 @@ class Linkedlist {
                     return { done: false, value: this.structure[this.current++] }
             }
         }
-    }
+    };
 
     add(value) {
         let x = 0
